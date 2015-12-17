@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  layout "projects"
   # GET /projects
   # GET /projects.json
   def index
@@ -10,6 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    render layout: "application"
   end
 
   # GET /projects/new
@@ -69,6 +71,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :ends_at)
+      params.require(:project).permit(:name, :ends_at, :description)
     end
 end

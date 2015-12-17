@@ -7,9 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="container">
-	<%= image_tag asset_path("office.jpg"), width: 120 %>
-	<%= yield %>
+	<div id="container">
+		<div id="container-projects">
+			<%= image_tag asset_path("office.jpg"), width: 120 %>
+			<%= yield %>
+		</div>
+		<div id="sidebar">
+			<h2>Sidebar</h2>
+			<%= yield(:sidebar) %>
+		</div>
 </div>
 </body>
 </html>
